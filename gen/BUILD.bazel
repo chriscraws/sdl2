@@ -1,0 +1,11 @@
+
+cc_library(
+  name = "xdg-shell-protocol",
+  hdrs = [
+    "xdg-shell-client-protocol.h"
+  ],
+  srcs = [
+    "xdg-shell-protocol.c",
+  ]
+  visibility = ["//visibility:public"]
+)

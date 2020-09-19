@@ -3,9 +3,9 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 cc_library(
 	name = "power",
 	alwayslink = True,
-	hdrs = glob(["*.h"]),
 	srcs = glob(["*.c"]),
 	deps = [
+			":headers",
 			"//:SDL2internal",
 			"//src/dynapi:dynapi",
 		] + select({
@@ -19,5 +19,11 @@ cc_library(
 			"//src/power/linux:linux",
 		],
 	}),
+	visibility = ["//visibility:public"],
+)
+
+cc_library(
+	name = "headers",
+	hdrs = ["SDL_syspower.h"],
 	visibility = ["//visibility:public"],
 )

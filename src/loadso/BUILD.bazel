@@ -10,8 +10,10 @@ cc_library(
 		"//:macos": [
 			"//src/loadso/dlopen:dlopen",
 		],
-		"//conditions:default": [
+		"//:linux": [
 			"//src/loadso/dlopen:dlopen",
+		],
+		"//conditions:default": [
 			"//src/loadso/dummy:dummy",
 		],
 	}),

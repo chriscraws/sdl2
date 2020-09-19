@@ -4,9 +4,23 @@ cc_library(
 	name = "wayland",
 	hdrs = glob(["*.h"]),
 	srcs = glob(["*.c"]),
+	includes = ["."],
 	deps = [
+		":sys_hdr",
+		"//src/events:headers",
+		"//src/video:headers",
+		"//src/video/khronos",
 		"//:SDL2internal",
 		"//src/dynapi:dynapi",
 	],
 	visibility = ["//:__subpackages__"],
+)
+
+cc_library(
+	name = "sys_hdr",
+	hdrs = ["SDL_waylanddyn.h"],
+	visibility = ["//:__subpackages__"],
+	deps = [
+		"//:SDL2internal",
+	]
 )

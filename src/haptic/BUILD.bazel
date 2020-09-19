@@ -16,9 +16,11 @@ cc_library(
 		"//:macos": [
 			"//src/haptic/darwin:darwin"
 		],
+		"//:linux": [
+			"//src/haptic/linux:linux"
+		],
 		"//conditions:default": [
-			"//src/haptic/dummy:dummy",
-			"//src/haptic/linux:linux",
+			"//src/haptic/dummy:dummy"
 		],
 	}),
 	visibility = ["//visibility:public"],
@@ -29,4 +31,7 @@ cc_library(
 	name = "headers",
 	hdrs = glob(["*.h"]),
 	visibility = ["//visibility:public"],
+	deps = [
+		"//src/joystick:headers",
+	]
 )

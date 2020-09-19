@@ -6,7 +6,10 @@ cc_library(
 	srcs = glob(["*.c"]),
 	deps = [
 		"//:SDL2internal",
+		"//src/core",
 		"//src/dynapi:dynapi",
+		"//src/video:headers",
+		"//src/video/khronos",
 	],
 	visibility = ["//:__subpackages__"],
 )

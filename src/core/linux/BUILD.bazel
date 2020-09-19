@@ -12,8 +12,11 @@ cc_library(
 	),
 	deps = [
 		"//:SDL2internal",
+		"//src/core/unix",
 		"//src/dynapi:dynapi",
 		"//src/events:headers",
+		"//src/video:headers",
+		"//src/video/khronos",
 	],
 	visibility = ["//:__subpackages__"],
 )

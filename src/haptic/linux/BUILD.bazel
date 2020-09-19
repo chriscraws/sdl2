@@ -5,6 +5,8 @@ cc_library(
 	srcs = glob(["*.c"]),
 	deps = [
 		"//:SDL2internal",
+		"//src/haptic:headers",
+		"//src/joystick",
 		"//src/dynapi:dynapi",
 	],
 	visibility = ["//:__subpackages__"],

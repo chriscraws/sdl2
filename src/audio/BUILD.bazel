@@ -7,6 +7,7 @@ cc_library(
 	srcs = glob(["*.c"]),
 	deps = [
 			"//:SDL2internal",
+			"//:SDL2base",
 			"//src/dynapi:dynapi",
 			"//src/audio/disk:disk",
 			"//src/audio/dummy:dummy",

@@ -2,11 +2,21 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 cc_library(
 	name = "linux",
-	hdrs = glob(["*.h"]),
 	srcs = glob(["*.c"]),
 	deps = [
+		":headers",
 		"//:SDL2internal",
 		"//src/dynapi:dynapi",
+		"//src/events:headers",
+		"//src/joystick/steam",
+		"//src/joystick/hidapi:SDL_hidapi",
 	],
 	visibility = ["//:__subpackages__"],
+)
+
+cc_library(
+	name = "headers",
+	hdrs = glob(["*.h"]),
+	visibility = ["//:__subpackages__"],
+	deps = ["//src/joystick:headers"],
 )

@@ -7,6 +7,8 @@ cc_library(
 	deps = [
 		"//:SDL2internal",
 		"//src/dynapi:dynapi",
+		"//src/power:headers",
+		"//src/core/linux",
 	],
 	visibility = ["//:__subpackages__"],
 )

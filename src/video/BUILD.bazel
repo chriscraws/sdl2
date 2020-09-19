@@ -36,4 +36,7 @@ cc_library(
 	name = "headers",
 	hdrs = glob(["*.h"]),
 	visibility = ["//visibility:public"],
+	deps = [
+		"//src/video/khronos:khronos",
+	]
 )
