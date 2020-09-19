@@ -56,6 +56,20 @@ SDL_LINKOPTS = select({
 			"-lpthread",
 			"-lrt",
 	],
+	"//:macos": [
+		"-lm",
+		"-liconv",
+		"-framework CoreAudio",
+		"-framework AudioToolbox",
+		"-framework ForceFeedback",
+		"-lobjc",
+		"-framework CoreVideo",
+		"-framework Cocoa",
+		"-framework Carbon",
+		"-framework IOKit",
+		"-weak_framework QuartzCore",
+		#"-weak_framework Metal",
+	],
 	"//conditions:default": [],
 })
 
