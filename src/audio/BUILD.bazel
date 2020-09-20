@@ -25,6 +25,7 @@ cc_library(
 			"//src/thread:thread",
 			"//src/thread/generic:generic",
 			"//src/audio/alsa:alsa",
+			"//src/audio/dsp",
 			"//src/audio/jack:jack",
 			"//src/audio/esd:esd",
 			"//src/audio/pulseaudio",

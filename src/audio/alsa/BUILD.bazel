@@ -7,6 +7,7 @@ cc_library(
 	srcs = glob(["**/*.c"]),
 	deps = [
 		"//:SDL2internal",
+		"//src/audio:headers",
 		"//src/dynapi:dynapi",
 	],
 	visibility = ["//visibility:public"],
