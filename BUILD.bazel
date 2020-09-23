@@ -90,7 +90,7 @@ cc_library(
 		"src/SDL_log.c",
 	],
 	deps = [
-		"//src/thread:thread",
+		"//src/thread:headers",
 		"//src/video:headers",
 	],
 	hdrs = glob(["include/**/*.h", "src/*.h"]),
@@ -102,6 +102,9 @@ cc_library(
 	name = "SDL2internal",
 	hdrs = glob(["include/**/*.h", "src/*.h"]),
 	includes = ["include", "src"],
+	deps = [
+		"//src/dynapi:headers",
+	],
 	visibility = ["//:__subpackages__"],
 )
 

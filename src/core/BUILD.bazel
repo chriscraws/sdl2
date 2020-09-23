@@ -12,8 +12,7 @@ cc_library(
 		"//:macos": [
 			"//src/core/unix:unix"
 		],
-		"//conditions:default": [
-			"//src/core/unix:unix",
+		"//:linux": [
 			"//src/core/linux:linux",
 		],
 	}),

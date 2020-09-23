@@ -12,8 +12,12 @@ cc_library(
 		),
 		"//:macos": glob(
 			["*.c"],
+			exclude=["SDL_hidapi.c"]
 		),
-		"//conditions:default": glob(["*.c"]),
+		"//:linux": glob(
+			["*.c"],
+			exclude=["SDL_hidapi.c"]
+		),
 	}),
 	deps = ["//:SDL2internal"] + select({
 		"//:windows": [
@@ -23,7 +27,7 @@ cc_library(
 			"//src/hidapi/mac:mac",
 			"//src/hidapi/mac:headers"
 		],
-		"//conditions:default": [
+		"//:linux": [
 			"//src/hidapi/linux:linux"
 		],
 	}),

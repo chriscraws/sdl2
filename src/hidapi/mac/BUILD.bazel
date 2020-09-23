@@ -15,6 +15,6 @@ cc_library(
 
 cc_library(
 	name = "headers",
-	hdrs = glob(["*.h", "*.c"]),
+	hdrs = glob(["*.h"]),
 	visibility = ["//:__subpackages__"],
 )

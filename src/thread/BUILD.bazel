@@ -2,21 +2,20 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 cc_library(
 	name = "thread",
-	alwayslink = True,
 	hdrs = glob(["*.h"]),
 	srcs = glob(["*.c"]),
 	deps = [
 		"//:SDL2internal",
-		"//src/dynapi:dynapi",
 	] + select({
 		"//:windows": [
 			"//src/thread/windows:windows",
 			"//src/thread/generic:syscond",
 		],
-		"//conditions:default": [
-			"//src/thread/stdcpp:stdcpp",
+		"//:linux": [
 			"//src/thread/pthread:pthread",
-			"//src/thread/generic:generic",
+		],
+		"//:macos": [
+			"//src/thread/pthread:pthread",
 		],
 	}),
 	visibility = ["//visibility:public"],
