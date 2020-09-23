@@ -2,17 +2,17 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 alias(
 	name = "windows",
-	actual  = "@bazel_tools//src/conditions:windows"
+	actual  = "@io_bazel_rules_go//go/platform:windows_amd64"
 )
 
 alias(
 	name = "macos",
-	actual  = "@bazel_tools//src/conditions:darwin_x86_64"
+	actual  = "@io_bazel_rules_go//go/platform:darwin_amd64"
 )
 
 alias(
 	name = "linux",
-	actual  = "@bazel_tools//src/conditions:linux_x86_64"
+	actual  = "@io_bazel_rules_go//go/platform:linux_amd64"
 )
 
 SDL_LINKOPTS = select({
